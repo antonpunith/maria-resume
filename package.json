@@ -1,0 +1,22 @@
+{
+  "name": "maria-resume",
+  "version": "0.1.0",
+  "description": "Maria's resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Maria's",
+    "Resume"
+  ],
+  "author": "Anton Punith",
+  "license": "ISC",
+  "dependencies": {
+    "resume-cli": "^1.2.7"
+  },
+  "devDependencies": {
+    "jsonresume-theme-elegant": "^1.12.1",
+    "jsonresume-theme-paper": "^0.3.5"
+  }
+}

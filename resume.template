@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	
+	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+	
+	<style type="text/css">
+	{{{css}}}
+	</style>
+	
+	</head>
+	<body>
+	
+	<header id="header">
+		<div class="container">
+			{{#resume.basics}}
+			<div class="row">
+				<div class="col-xs-9">
+					{{#name}}
+					<h1>
+						{{.}}
+					</h1>
+					{{/name}}
+					{{#vehicle}}
+					<div>
+						<strong>Vehicle: </strong>
+						{{.}}
+					</div>
+					{{/vehicle}}
+					{{#transmission}}
+					<div>
+						<strong>Transmission: </strong>
+						{{.}}
+					</div>
+					{{/transmission}}
+				</div>
+				<div class="col-sx-3">
+					<div id="contact">
+							{{#email}}
+								<strong>Email</strong>
+								<div class="email">{{.}}</div>
+								<br/>
+							{{/email}}
+
+							{{#phone}}
+								<strong>Phone</strong>
+								<div class="phone">{{.}}</div>
+							{{/phone}}
+					</div>
+				</div>
+			</div>
+			{{/resume.basics}}
+		</div>
+	</header>
+	<div id="content" class="container">
+
+	{{#resume.basics}}
+
+	<section id="about" class="row">
+		<aside class="col-xs-3">
+			<h3>About</h3>
+		</aside>
+		<div class="col-xs-9">
+		{{#summary}}
+			<p>{{.}}</p>
+		{{/summary}}
+		</div>
+	</section>
+	{{#if profiles.length}}
+	<section id="profiles" class="row">
+		<aside class="col-xs-3">
+			<h3>Profiles</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+				{{#profiles}}
+				<div class="col-xs-6">
+					{{#network}}
+					<strong class="network">
+						{{.}}
+					</strong>
+					{{/network}}
+					{{#if username}}
+					<div class="username">
+						{{#if url}}
+						<div class="url">
+							<a href="{{url}}">{{username}}</a>
+						</div>
+						{{else}}
+							{{username}}
+						{{/if}}
+					</div>
+					{{else}}
+						{{#if url}}
+						<div class="url">
+							<a href="{{url}}">{{url}}</a>
+						</div>
+						{{/if}}
+					{{/if}}
+				</div>
+				{{/profiles}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+	{{/resume.basics}}
+
+
+	
+	{{#if resume.training.length}}
+	<section class="education row">
+		<aside class="col-xs-3">
+			<h3>Training</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.training}}
+			<div class="col-xs-12">
+				<h4 class="strike-through">
+					<span>{{institution}}</span>
+					<span class="date">
+						{{startDate}} — {{endDate}}
+					</span>
+				</h4>
+				{{#area}}
+				<div class="area">
+					{{.}}
+				</div>
+				{{/area}}
+				{{#studyType}}
+				<div class="studyType">
+					{{.}}
+				</div>
+				{{/studyType}}
+				{{#if courses.length}}
+				<h4>Courses</h4>
+				<ul class="courses">
+					{{#courses}}
+					<li>{{.}}</li>
+					{{/courses}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+	
+
+	{{#if resume.education.length}}
+	<section class="education row">
+		<aside class="col-xs-3">
+			<h3>Education</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.education}}
+			<div class="col-xs-12">
+				<h4 class="strike-through">
+					<span>{{institution}}</span>
+					<span class="date">
+						{{startDate}}{{#if startDate}} — {{/if}}{{endDate}}
+					</span>
+				</h4>
+				{{#area}}
+				<div class="area">
+					{{.}}
+				</div>
+				{{/area}}
+				{{#studyType}}
+				<div class="studyType">
+					{{.}}
+				</div>
+				{{/studyType}}
+				{{#if courses.length}}
+				<h4>Courses</h4>
+				<ul class="courses">
+					{{#courses}}
+					<li>{{.}}</li>
+					{{/courses}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
+
+	{{#if resume.work.length}}
+	<section id="work" class="row">
+		<aside class="col-xs-3">
+			<h3>Experience</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.work}}
+			<div class="col-xs-12">
+				<h4 class="strike-through">
+					{{#position}}
+					<span>{{.}}</span>
+					{{/position}}
+					<span class="date">
+						{{startDate}}{{#if startDate}} — {{/if}}{{endDate}}
+					</span>
+				</h4>
+				{{#website}}
+				<div class="website pull-right">
+					<a href="{{.}}">{{.}}</a>
+				</div>
+				{{/website}}
+				{{#company}}
+				<div class="position">
+					{{.}}
+				</div>
+				{{/company}}
+				{{#summary}}
+				<div class="summary">
+					<p>{{.}}</p>
+				</div>
+				{{/summary}}
+				{{#if highlights.length}}
+				<ul class="highlights">
+					{{#highlights}}
+					<li class="bullet">{{.}}</li>
+					{{/highlights}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
+	{{#if resume.volunteer.length}}
+	<section id="volunteer" class="row">
+		<aside class="col-xs-3">
+			<h3>Volunteer</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.volunteer}}
+			<div class="col-xs-12">
+				<h4 class="strike-through">
+					<span>{{organization}}</span>
+					<span class="date">
+						{{startDate}}{{#if startDate}} — {{/if}}{{endDate}}
+					</span>
+				</h4>
+				{{#website}}
+				<div class="website pull-right">
+					<a href="{{.}}">{{.}}</a>
+				</div>
+				{{/website}}
+				{{#position}}
+				<div class="position">
+					{{.}}
+				</div>
+				{{/position}}
+				{{#summary}}
+				<div class="summary">
+					<p>{{.}}</p>
+				</div>
+				{{/summary}}
+				{{#if highlights.length}}
+				<ul class="highlights">
+					{{#highlights}}
+					<li class="bullet">{{.}}</li>
+					{{/highlights}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
+
+	{{#if resume.skills.length}}
+	<section id="skills" class="row">
+		<aside class="col-xs-3">
+			<h3>Skills</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.skills}}
+			<div class="col-xs-4">
+				{{#name}}
+				<div class="name">
+					<h4>{{.}}</h4>
+				</div>
+				{{/name}}
+				{{#if keywords.length}}
+				<ul class="keywords">
+					{{#keywords}}
+					<li>{{.}}</li>
+					{{/keywords}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
+	{{#if resume.languages.length}}
+	<section id="languages" class="row">
+		<aside class="col-xs-3">
+			<h3>Languages</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.languages}}
+			<div class="col-xs-4">
+
+				{{#language}}
+				<ul class="keywords">
+					<li>{{.}}</li>
+				</ul>
+				{{/language}}
+				{{#fluency}}
+				<div class="fluency">
+					{{.}}
+				</div>
+				{{/fluency}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
+	{{#if resume.interests.length}}
+	<section id="interests" class="row">
+		<aside class="col-xs-3">
+			<h3>Interests</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.interests}}
+			<div class="col-xs-4">
+				{{#name}}
+				<div class="name">
+					<h4>{{.}}</h4>
+				</div>
+				{{/name}}
+				{{#if keywords.length}}
+				<ul class="keywords">
+					{{#keywords}}
+					<li>{{.}}</li>
+					{{/keywords}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+	
+	{{#if resume.references.length}}
+	<section id="references" class="row">
+		<aside class="col-xs-3">
+			<h3>References</h3>
+		</aside>
+		<div class="col-xs-9">
+			<div class="row">
+			{{#each resume.references}}
+			<div class="col-xs-12">
+				{{#if reference}}
+				<blockquote class="reference">
+					<p>{{reference}}</p>
+					{{#name}}
+					<p class="name">
+						<strong>— {{.}}</strong>
+					</p>
+					{{/name}}
+				</blockquote>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
+	</div>
+	
+	</body>
+</html>

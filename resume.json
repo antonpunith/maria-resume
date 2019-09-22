@@ -1,0 +1,115 @@
+{
+  "basics": {
+    "name": "Maria Thiloba",
+    "vehicle": "Toyota Corolla 2017",
+    "transmission": "Automatic",
+    "picture": "",
+    "email": "maria.thilo@gmail.com",
+    "phone": "0413256655",
+    "summary": "A fun loving, enthusiastic and confident, young female driving instructor who's passionate about driving and loves cars. Would like to make the experience stress free for the new learners and help them become safe drivers with confidence to drive without help.",
+    "location": {
+      "address": "Unit 2 177 Peel Street",
+      "postalCode": "3101",
+      "city": "Melbourne",
+      "countryCode": "AU",
+      "region": "Victoria"
+    }
+  },
+  "training": [
+    {
+      "institution": "Intelligent Training Solutions, Preston",
+      "area": "Certificate IV in Transport and Logistics (Road Transport - Car Driving Instruction)",
+      "startDate": "December 2018",
+      "endDate": "July 2019"
+    }
+  ],
+  "work1": [
+    {
+      "position": "Mother and Homemaker",
+      "startDate": "July 2009",
+      "endDate": "Till date",
+      "summary": "Home maker description",
+      "highlights": ["hightlight"]
+    }
+  ],
+  "work": [
+    {
+      "company": "Dr. Gupta & Co, Chennai, India",
+      "position": "Junior Merchandiser",
+      "startDate": "January 2009",
+      "endDate": "August 2009"
+    },
+    {
+      "company": "MCCOY CLOTHING, Chennai, India",
+      "position": "Junior Merchandiser",
+      "startDate": "May 2008",
+      "endDate": "July 2008 "
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Maytime Fair - Xavier College, Kew",
+      "summary": "Volunteered at the coffee stall for the Maytime fair, talking with customers and liaising with the barista.",
+      "highlights": [
+        "Enjoyed talking and interacting with customers.",
+        "Handled high customer volumes and sales which was a high pressure job."
+      ]
+    },
+    {
+      "organization": "Sacred Heart School, Kew",
+      "summary": "Volunteered for various events held at school and other locations where I had to interact with Children.",
+      "highlights": ["Interacted with children in various age groups building my confidence in dealing with youth."]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Pearl Academy Of Fashion, Chennai, India",
+      "area": "Post Diploma in Apparel Merchandising & Production",
+      "endDate": "April 2008"
+    },
+    {
+      "institution": "Fatima college, Madurai, India",
+      "area": "Diploma in Fashion designing & Garment Construction",
+      "endDate": "April 2007"
+    },
+    {
+      "institution": "Fatima college, Madurai, India",
+      "area": "Bachelor of Arts (English)",
+      "endDate": "April 2006"
+    }
+  ],
+
+  "skills1": [
+    {
+      "keywords": ["HTML", "CSS", "Javascript"]
+    },
+    {
+      "keywords": ["HTML", "CSS", "Javascript"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English"
+    },
+    {
+      "language": "Tamil"
+    }
+  ],
+  "interests": [
+    {
+      "keywords": ["Design & creativity"]
+    },
+    {
+      "keywords": ["Cars"]
+    },
+    {
+      "keywords": ["Cooking"]
+    }
+  ],
+  "references1": [
+    {
+      "name": "Erlich Bachman",
+      "reference": "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
+    }
+  ]
+}
